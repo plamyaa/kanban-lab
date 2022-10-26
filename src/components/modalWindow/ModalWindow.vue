@@ -1,16 +1,23 @@
 <template>
     <modal>
-        <div class="modal-mask" :style="themeStyle">
+        <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container">
                     <button class="modal-exit" @click="closeModal">X</button>
                     <form class="modal-form" @submit.prevent>
                         Описание
-                        <input v-bind:value="card.task" @input="card.task = $event.target.value"
-                            class="modal-task-input" input="text" >
+                        <input
+                            v-bind:value="card.task"
+                            @input="card.task = $event.target.value"
+                            class="modal-task-input"
+                            input="text"
+                        />
                         Приоритет
-                        <select v-model="card.priority" 
-                            class="modal-task-input" placeholder="Значимость">
+                        <select
+                            v-model="card.priority"
+                            class="modal-task-input"
+                            placeholder="Значимость"
+                        >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -25,29 +32,29 @@
 
 <script>
 export default {
+    name: "ModalWindow",
     props: {
         task: String,
         priority: Number,
         id: Number,
         handleModal: Function,
         closeModal: Function,
-        themeStyle: Object,
     },
     data() {
         return {
             card: {
                 task: this.task,
                 priority: this.priority,
-                id: Number(this.id)
-            }
+                id: Number(this.id),
+            },
         }
     },
     methods: {
         onClick() {
-            this.closeModal();
-            this.handleModal(this.card.task, this.card.priority, this.card.id);
-        }
-    }
+            this.closeModal()
+            this.handleModal(this.card.task, this.card.priority, this.card.id)
+        },
+    },
 }
 </script>
 
@@ -85,7 +92,6 @@ export default {
     color: #42b983;
 }
 
-
 .modal-exit {
     float: right;
     width: 22px;
@@ -94,12 +100,12 @@ export default {
     border-radius: 100%;
     text-align: center;
     line-height: 20px;
-    transition: .4s;
+    transition: 0.4s;
     background-color: var(--secondary-color);
     color: var(--main-color);
 }
 
-.modal-task-input{
+.modal-task-input {
     margin: 10px 0;
     height: 50px;
     width: 100%;
@@ -109,10 +115,11 @@ export default {
     border-radius: 5px;
     padding: 0 10px;
 }
+
 .modal-form {
     font-size: 14px;
     margin-top: 25px;
-    color: var(--board-text)
+    color: var(--board-text);
 }
 
 .modal-button {
@@ -124,14 +131,12 @@ export default {
     border-radius: 5px;
     text-align: center;
     line-height: 20px;
-    transition: .4s;
+    transition: 0.4s;
     background-color: var(--main-color);
     color: var(--main-color__text);
 }
 
-.modal
-
-.modal-enter .modal-container,
+.modal .modal-enter .modal-container,
 .modal-leave-active .modal-container {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);

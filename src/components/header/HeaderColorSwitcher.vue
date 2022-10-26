@@ -1,22 +1,21 @@
 <template>
-    <div class="switch-wrapper" :style="themeStyle">
+    <div class="switch-wrapper">
         <p class="text">Темная тема</p>
         <label class="switch">
             <span class="on">ON</span>
             <span class="off">OFF</span>
-            <input type="checkbox" v-model="theme" @click="changeTheme">
+            <input type="checkbox" v-model="theme" @click="changeTheme" />
             <span class="slider round"></span>
         </label>
     </div>
-
 </template>
 
 <script>
 export default {
+    name: "ColorSwitcher",
     props: {
         theme: Boolean,
         changeTheme: Function,
-        themeStyle: Object,
     },
 }
 </script>
@@ -73,27 +72,27 @@ export default {
     right: 0;
     bottom: 0;
     background-color: var(--switcher-background-color);
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
 .slider:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
     background-color: var(--main-color__text);
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
     background-color: var(--switcher-background-color);
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
     -webkit-transform: translateX(45px);
     -ms-transform: translateX(45px);
     transform: translateX(45px);

@@ -1,38 +1,54 @@
 <template>
-    <div class="content" :style="themeStyle">
-        <AddButton :themeStyle="themeStyle" :handleModal="handleModal" />
-        <Board :themeStyle="themeStyle" :cards="cards" :statuses="statuses" :moveCard="moveCard" :handleModal="handleModal" />
+    <div class="content">
+        <ContentAddButton :handleModal="handleModal" />
+        <Board
+            :cards="cards"
+            :statuses="statuses"
+            :moveCard="moveCard"
+            :handleModal="handleModal"
+        />
     </div>
 </template>
 
 <script>
-import AddButton from "./AddButton.vue"
-import Board from "./board/Board.vue"
+import ContentAddButton from './ContentAddButton.vue'
+import Board from './board/Board.vue'
 export default {
+    name: 'AppContent',
     components: {
-        AddButton, Board
+        ContentAddButton,
+        Board,
     },
     props: {
-        themeStyle: Object,
         cards: Object,
         statuses: Object,
         moveCard: Function,
-        handleModal: Function
-    }
+        handleModal: Function,
+    },
 }
 </script>
 
 <style scoped>
 .content {
+    display: grid;
     padding: 0 13vw;
     padding-bottom: 22px;
-    transition: .4s;
+    transition: 0.4s;
     background-color: var(--content-background);
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
 }
 
 @media (max-width: 992px) {
     .content {
         padding: 0 7vw;
+    }
+}
+@media (min-width: 1440.01px) {
+    .content {
+        padding: 0;
+        padding-bottom: 15px;
     }
 }
 </style>

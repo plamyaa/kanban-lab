@@ -1,48 +1,55 @@
 <template>
-    <div class="card" :style="themeStyle" :id="card.id" draggable="true" @dragstart="onDragging">
+    <div class="card" :id="card.id" draggable="true" @dragstart="onDragging">
         <div class="card__header">
-            <h3 class="card__number">Задача: {{card.id}}</h3>
-            <span class="card__priority" :class="cardPriority">{{card.priority}}</span>
+            <h3 class="card__number">Задача: {{ card.id }}</h3>
+            <span class="card__priority" :class="cardPriority">{{
+                card.priority
+            }}</span>
         </div>
-        <p class="card__task">{{card.task}}</p>
-        <p class="card__date">{{String(card.data).slice(16, 25)}}</p>
-        <CardButtons :handleModal="handleModal" :themeStyle="themeStyle" :status="status" :cardId="card.id"
-            :moveCard="moveCard" :cardTask="card.task" :cardPriority="card.priority" />
+        <p class="card__task">{{ card.task }}</p>
+        <p class="card__date">{{ String(card.data).slice(16, 25) }}</p>
+        <CardButtons
+            :handleModal="handleModal"
+            :status="status"
+            :cardId="card.id"
+            :moveCard="moveCard"
+            :cardTask="card.task"
+            :cardPriority="card.priority"
+        />
     </div>
-
 </template>
 
 <script>
-import CardButtons from "./СardButtons.vue"
+import CardButtons from './СardButtons.vue'
 export default {
+    name: "BoardCard",
     props: {
         card: Object,
         moveCard: Function,
-        themeStyle: Object,
         handleModal: Function,
         status: String,
         drag: Function,
     },
     components: {
-        CardButtons
+        CardButtons,
     },
     methods: {
         onDragging(event) {
-            event.dataTransfer.setData("itemId", event.target.id);
-            event.dataTransfer.setData("boardId", event.target.parentNode.id)
+            event.dataTransfer.setData('itemId', event.target.id)
+            event.dataTransfer.setData('boardId', event.target.parentNode.id)
         },
     },
     computed: {
         cardPriority() {
-            return "card__priority_" + String(this.card.priority)
-        }
-    }
+            return 'card__priority_' + String(this.card.priority)
+        },
+    },
 }
 </script>
 
 <style scoped>
 .card {
-    transition: .4s;
+    transition: 0.4s;
     width: 100%;
     border: 2px solid var(--main-color);
     border-radius: 5px;
@@ -67,7 +74,7 @@ export default {
     border-radius: 100%;
     text-align: center;
     line-height: 20px;
-    transition: .4s;
+    transition: 0.4s;
     color: var(--main-color);
 }
 
