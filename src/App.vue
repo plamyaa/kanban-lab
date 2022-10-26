@@ -26,15 +26,24 @@ export default {
     data() {
         return {
             cards: [
-                { id: 1, task: 'lorem', data: new Date(), priority: 1 },
-                { id: 2, task: 'lorem impu', data: new Date(), priority: 2 },
+                {
+                    id: 1,
+                    task: 'lorem',
+                    data: new Date(2011, 6, 13),
+                    priority: 1,
+                },
+                {
+                    id: 2,
+                    task: 'lorem impu',
+                    data: new Date(2022, 8, 1),
+                    priority: 2,
+                },
                 {
                     id: 3,
                     task: 'lorem impus uiabl',
-                    data: new Date(),
-                    priority: 2,
+                    data: new Date(2022, 10, 26),
+                    priority: 3,
                 },
-                { id: 4, task: 'lor', data: new Date(), priority: 3 },
             ],
             statuses: {
                 plan: [1, 4],

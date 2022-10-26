@@ -1,19 +1,7 @@
 # kanban-board
 
-## Project setup
-```
-npm install
-```
+## Возможные улучшения
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. Более гибкая адаптивность
+2. Анимации при перемещении карточек
+3. Сортировка карточек по приоритету

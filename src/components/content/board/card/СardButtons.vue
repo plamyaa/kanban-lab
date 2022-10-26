@@ -76,4 +76,7 @@ export default {
     opacity: 0.4;
     cursor: auto;
 }
+.button {
+    transition: .4s;
+}
 </style>

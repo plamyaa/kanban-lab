@@ -7,7 +7,7 @@
             }}</span>
         </div>
         <p class="card__task">{{ card.task }}</p>
-        <p class="card__date">{{ String(card.data).slice(16, 25) }}</p>
+        <p class="card__date">{{ formateDate(card.data) }}</p>
         <CardButtons
             :handleModal="handleModal"
             :status="status"
@@ -22,7 +22,7 @@
 <script>
 import CardButtons from './СardButtons.vue'
 export default {
-    name: "BoardCard",
+    name: 'BoardCard',
     props: {
         card: Object,
         moveCard: Function,
@@ -37,6 +37,18 @@ export default {
         onDragging(event) {
             event.dataTransfer.setData('itemId', event.target.id)
             event.dataTransfer.setData('boardId', event.target.parentNode.id)
+        },
+        formateDate(date) {
+            const year = date.getFullYear()
+            const month = date.getMonth() + 1
+            const _date = date.getDate()
+            const time = String(date).slice(16, 25)
+            const formatted = `${
+                _date.toString().length === 1 ? '0' + _date : _date
+            }.${
+                month.toString().length === 1 ? '0' + month : month
+            }.${year} ${time}`
+            return formatted
         },
     },
     computed: {
