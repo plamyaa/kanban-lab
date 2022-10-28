@@ -1,8 +1,8 @@
 <template>
     <modal>
-        <div class="modal-mask">
+        <div class="modal-mask" @click="closeModal">
             <div class="modal-wrapper">
-                <div class="modal-container">
+                <div class="modal-container" @click.stop>
                     <button class="modal-exit" @click="closeModal">X</button>
                     <form class="modal-form" @submit.prevent>
                         Описание

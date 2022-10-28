@@ -2,7 +2,7 @@
     <button class="button" @click="showModal = true">Создать задачу</button>
     <ModalWindow
         v-if="showModal"
-        :closeModal="() => (showModal = false)"
+        :closeModal="() => showModal = false"
         task=""
         priority="1"
         id="0"
