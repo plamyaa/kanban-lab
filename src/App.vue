@@ -46,7 +46,7 @@ export default {
                 },
             ],
             statuses: {
-                plan: [1, 4],
+                plan: [1],
                 atWork: [2],
                 ready: [3],
             },
