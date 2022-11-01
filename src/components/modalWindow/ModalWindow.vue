@@ -6,11 +6,7 @@
           <button class="modal-exit" @click="closeModal">X</button>
           <form class="modal-form" @submit.prevent>
             Описание
-            <input
-							v-model="card.task"
-              class="modal-task-input"
-              input="text"
-            />
+            <input v-model="card.task" class="modal-task-input" input="text" />
             Приоритет
             <select
               v-model="card.priority"
