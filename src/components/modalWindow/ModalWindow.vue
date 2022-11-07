@@ -40,7 +40,7 @@ export default {
       card: {
         task: this.task,
         priority: this.priority,
-        id: Number(this.id),
+        id: this.id,
       },
     };
   },

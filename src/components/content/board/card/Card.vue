@@ -66,6 +66,7 @@ export default {
   padding: 8px 13px;
   background-color: var(--content-background);
   color: var(--board-text);
+  max-width: 235px;
 }
 
 .card__header {
@@ -102,5 +103,6 @@ export default {
 
 .card__task {
   margin-bottom: 10px;
+  word-wrap: break-word;
 }
 </style>

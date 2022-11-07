@@ -4,8 +4,8 @@
     v-if="showModal"
     :closeModal="() => (showModal = false)"
     task=""
-    priority="1"
-    id="0"
+    :priority="1"
+    :id="0"
     :handleModal="handleModal"
   />
 </template>
