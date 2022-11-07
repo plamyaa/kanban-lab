@@ -61,11 +61,6 @@ export default {
   components: {
     ModalWindow,
   },
-  methods: {
-    handleMove(direction) {
-      moveCard(this.cardId, direction);
-    },
-  },
 };
 </script>
 
