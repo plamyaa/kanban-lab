@@ -15,7 +15,7 @@
 export default {
   name: 'ButtonArrow',
   props: {
-    rotate: String,
+    rotate: Number,
   },
 };
 </script>
